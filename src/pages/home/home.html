@@ -1,0 +1,35 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			Ionic Blank
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<div text-center>
+		<button (tap)='success()' ion-button>
+			Simulate success
+		</button>
+	</div>
+	<div text-center>
+		<button (tap)='error()' ion-button>
+			Simulate error
+		</button>
+	</div>
+	<div text-center>
+		<button (tap)='networkError()' ion-button>
+			Simulate network error
+		</button>
+	</div>
+	<div text-center>
+		<button (tap)='loaderOnly()' ion-button>
+			Simulate loader only
+		</button>
+	</div>
+	<div text-center>
+		<button (tap)='errorOnly()' ion-button>
+			Simulate error toaster only
+		</button>
+	</div>
+</ion-content>
