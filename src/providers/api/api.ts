@@ -57,18 +57,32 @@ export class ApiProvider {
 					response.msg = 'Something went wrong! Please try again later....';
 				}
 
+
+				// random timeout to simulate latency
+
+
+				let timeout = Math.ceil(Math.random()*5000);
+
+				setTimeout(()=>{
+
+					if(url == 'success'){
+						// resolves a promise
+						return resolve(response);
+					}else if(url == 'error'){
+						// resolves a promise but infact error is there from server
+						// so we need to extract error from response parser
+						return resolve(response);
+					}else if(url == 'network_error'){
+						// rejects the promise, some network error occurred
+						return reject("Serve is down..");
+					}
+
+
+
+				},timeout)
+
 	
-				if(url == 'success'){
-					// resolves a promise
-					return resolve(response);
-				}else if(url == 'error'){
-					// resolves a promise but infact error is there from server
-					// so we need to extract error from response parser
-					return resolve(response);
-				}else if(url == 'network_error'){
-					// rejects the promise, some network error occurred
-					return reject("Serve is down..");
-				}
+				
 	
 	
 	
